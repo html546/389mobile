@@ -19,7 +19,8 @@
 
 <script>
 import { Field, CellGroup, Button } from 'vant';
-import api from '@/api';
+import axios from 'axios';
+// import api from '@/api';
 export default {
     name: '',
     components: {
@@ -36,7 +37,7 @@ export default {
     methods: {
         submit() {
             var vm = this;
-            axios.post('api.login', {
+            axios.post('http://dan.tushop.shop:88/api/login/login', {
                 username: vm.username,
                 password: vm.password
             }).then((response) => {
