@@ -26,6 +26,7 @@ a {
   font-size: 13px;
   color: #676a6c;
   overflow: hidden;
+  height: 100%;
 }
 .text-center {
   text-align: center;

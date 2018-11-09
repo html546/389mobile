@@ -1,19 +1,21 @@
 <template>
-    <div class="wrapper">
-        <p class="text-center">语言选择:</p>
-        <p class="text-center">
-            <a href="javascript:;">简体中文</a>
-            <a href="javascript:;">English</a>
-        </p>
-        <div class="logo">
-            <img src="../assets/images/logo.png" alt="">
+    <div class="wrapper-box">
+        <div class="wrapper">
+            <p class="text-center">语言选择:</p>
+            <p class="text-center">
+                <a href="javascript:;">简体中文</a>
+                <a href="javascript:;">English</a>
+            </p>
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="">
+            </div>
+            <h2 class="title">会员登录</h2>
+            <van-cell-group class="van-input-group">
+                <van-field class="van-input" v-model="username" clearable placeholder="会员编号" :error="nametest" />
+                <van-field class="van-input" v-model="password" clearable type="password" placeholder="登录密码" :error="passtest" />
+            </van-cell-group>
+            <van-button size="large" @click="submit">登录</van-button>
         </div>
-        <h2 class="title">会员登录</h2>
-        <van-cell-group class="van-input-group">
-            <van-field class="van-input" v-model="username" clearable placeholder="会员编号" :error="nametest" />
-            <van-field class="van-input" v-model="password" clearable type="password" placeholder="登录密码" :error="passtest" />
-        </van-cell-group>
-        <van-button size="large" @click="submit">登录</van-button>
     </div>
 </template>
 
@@ -33,17 +35,17 @@ export default {
         return {
             username: '',
             password: '',
-            nametest:false,
-            passtest:false
+            nametest: false,
+            passtest: false
         }
     },
     methods: {
         submit() {
             var vm = this;
-            if(!this.username){
+            if (!this.username) {
                 this.nametest = true;
             }
-            if(!this.password){
+            if (!this.password) {
                 this.passtest = true;
             }
             this.$http.post('/remote/api/login/login', {
@@ -53,6 +55,8 @@ export default {
                 console.log(response);
                 if (response.data.status == 1) {
                     Toast.success(response.data.msg);
+                    this.$router.push({ path: '/index' })
+                    localStorage.setItem('user',JSON.stringify(response.data.result));
                 } else if (response.data.status == 0) {
                     Toast.fail(response.data.msg);
                 }
@@ -65,6 +69,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.wrapper-box{
+    overflow: hidden;
+    background-color: #1c1c1c;
+    height: 100%;
+}
 .wrapper {
   width: 100%;
   margin-top: 140px;
@@ -85,7 +94,7 @@ export default {
     }
   }
   .title {
-    font-size: 24px;
+    font-size: 24Px;
     font-weight: 600;
     text-align: center;
     color: #8e7237;
