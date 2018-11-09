@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dwb-vue-drawer": "0.0.4",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "vant": "^1.4.2",

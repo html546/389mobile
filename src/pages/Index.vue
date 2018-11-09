@@ -71,12 +71,31 @@
             <van-tabbar-item icon="contact">团队管理</van-tabbar-item>
             <van-tabbar-item icon="contact">我的</van-tabbar-item>
         </van-tabbar>
+        <DwbVueDrawer :visible.sync="visible" :position="position" :lockScroll="lockScroll" :zIndex="zIndex" :maskStyle="maskStyle" :containerStyle="containerStyle" @open="open" @close="close">
+            <div class="logo">
+                <img src="@/assets/images/logo.png" alt="">
+            </div>
+            <ul>
+                <li>5</li>
+                <li>首页</li>
+                <li>会员资料</li>
+                <li>账户管理</li>
+                <li>组织图</li>
+                <li>奖金管理</li>
+                <li>财务管理</li>
+                <li>交易市场</li>
+                <li>SEK管理</li>
+                <li>公司留言</li>
+                <li>公告栏</li>
+            </ul>
+        </DwbVueDrawer>
     </div>
 </template>
 
 <script>
 // 这里使用了lazyload懒加载，可以后期加上加载中图片等一些配置信息
 import { NavBar, Icon, Swipe, SwipeItem, Lazyload, Row, Col, Panel, Tabbar, TabbarItem } from 'vant'
+import { DwbVueDrawer } from 'dwb-vue-drawer';
 export default {
     name: '',
     components: {
@@ -89,7 +108,8 @@ export default {
         [Col.name]: Col,
         [Panel.name]: Panel,
         [Tabbar.name]: Tabbar,
-        [TabbarItem.name]: TabbarItem
+        [TabbarItem.name]: TabbarItem,
+        DwbVueDrawer
     },
     data() {
         return {
@@ -100,6 +120,17 @@ export default {
                 '../../static/images/banner3.jpg'
             ],
             active: 0,
+            visible: false,
+            position: 'left',
+            lockScroll: true,
+            maskClosable: true,
+            zIndex: 200,
+            maskStyle: {
+                backgroundColor: 'rgba(0, 0, 0, 0.7)'
+            },
+            containerStyle: {
+                width: '50vw'
+            }
         }
     },
     created() {
@@ -119,10 +150,20 @@ export default {
     },
     methods: {
         onClickLeft() {
-            alert('左边滑动');
+            this.visible = true;
         },
         onClickRight() {
             alert('右边退出');
+        },
+        show(position) {
+            this.position = position
+            this.visible = true
+        },
+        open() {
+            console.log('open callback')
+        },
+        close() {
+            console.log('close callback')
         }
     }
 }
@@ -165,15 +206,24 @@ export default {
   }
   .notice {
     margin: 0 25px 25px;
-    padding-bottom: 50PX;
+    padding-bottom: 50px;
     .notice_content {
-      padding: 10PX 15PX;
+      padding: 10px 15px;
     }
   }
   .van-tabbar {
     background-color: rgb(167, 135, 67);
     .van-tabbar-item {
       color: #fff;
+    }
+  }
+  .logo {
+    width: 100%;
+    text-align: center;
+    img {
+      width: 250px;
+      height: 250px;
+      margin: 20px auto;
     }
   }
 }
