@@ -71,7 +71,7 @@
             <van-tabbar-item icon="contact">团队管理</van-tabbar-item>
             <van-tabbar-item icon="contact">我的</van-tabbar-item>
         </van-tabbar>
-        <Drawer :move="move" :close="close" />
+        <Drawer ref="child" />
     </div>
 </template>
 
@@ -102,7 +102,6 @@ export default {
                 '../../static/images/banner2.jpg',
                 '../../static/images/banner3.jpg'
             ],
-            move: false,
             active: 0
         }
     },
@@ -124,13 +123,10 @@ export default {
     methods: {
         onClickLeft() {
             // alert('左边滑出');
-            this.move = true;
+            this.$refs.child.$emit('open')
         },
         onClickRight() {
             alert('右边退出');
-        },
-        close(){
-            this.move = false;
         }
     }
 }

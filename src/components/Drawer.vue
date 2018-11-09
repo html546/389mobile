@@ -1,6 +1,6 @@
 <template>
     <DwbVueDrawer 
-        :visible.sync="move" 
+        :visible.sync="visible" 
         :position="position" 
         :lockScroll="lockScroll" 
         :zIndex="zIndex" 
@@ -34,7 +34,6 @@ export default {
     components: {
         DwbVueDrawer
     },
-    props:['move'],
     data() {
         return {
             visible: false,
@@ -50,6 +49,13 @@ export default {
                 width: '50vw'
             }
         }
+    },
+    mounted(){
+        this.$nextTick(function(){
+            this.$on('open',()=>{
+                this.visible = true;
+            })
+        })
     },
     methods: {
         open() {
