@@ -1,13 +1,5 @@
 <template>
-    <DwbVueDrawer 
-        :visible.sync="visible" 
-        :position="position" 
-        :lockScroll="lockScroll" 
-        :zIndex="zIndex" 
-        :maskStyle="maskStyle" 
-        :containerStyle="containerStyle" 
-        @open="open" 
-        @close="close">
+    <DwbVueDrawer :visible.sync="visible" :position="position" :lockScroll="lockScroll" :zIndex="zIndex" :maskStyle="maskStyle" :containerStyle="containerStyle" @open="open" @close="close">
         <div class="logo">
             <img src="@/assets/images/logo.png" alt="">
         </div>
@@ -50,9 +42,9 @@ export default {
             }
         }
     },
-    mounted(){
-        this.$nextTick(function(){
-            this.$on('open',()=>{
+    mounted() {
+        this.$nextTick(function () {
+            this.$on('open', () => {
                 this.visible = true;
             })
         })

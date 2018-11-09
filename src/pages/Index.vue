@@ -119,6 +119,15 @@ export default {
         }).catch((error) => {
             console.log(error);
         })
+        this.$http.post('/remote/api/index/getad', {
+            userid: userid,
+            sessionid: sessionid
+        }).then((response)=>{
+            console.log(response);
+            vm.images = response.data.data;
+        }).catch((error)=>{
+            console.log(error);
+        })
     },
     methods: {
         onClickLeft() {
