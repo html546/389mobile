@@ -25,7 +25,7 @@ a {
   -moz-osx-font-smoothing: grayscale;
   font-size: 13px;
   color: #676a6c;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
 }
 .text-center {

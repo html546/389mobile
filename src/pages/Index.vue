@@ -59,12 +59,24 @@
                 <van-col span="6">0.00</van-col>
             </van-row>
         </div>
+        <div class="notice">
+            <van-panel title="公告">
+                <div class="notice_content">内容</div>
+            </van-panel>
+        </div>
+        <van-tabbar v-model="active" fixed>
+            <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
+            <van-tabbar-item icon="logistics">交易中心</van-tabbar-item>
+            <van-tabbar-item icon="cart">商城购物</van-tabbar-item>
+            <van-tabbar-item icon="contact">团队管理</van-tabbar-item>
+            <van-tabbar-item icon="contact">我的</van-tabbar-item>
+        </van-tabbar>
     </div>
 </template>
 
 <script>
 // 这里使用了lazyload懒加载，可以后期加上加载中图片等一些配置信息
-import { NavBar, Icon, Swipe, SwipeItem, Lazyload, Row, Col } from 'vant'
+import { NavBar, Icon, Swipe, SwipeItem, Lazyload, Row, Col, Panel, Tabbar, TabbarItem } from 'vant'
 export default {
     name: '',
     components: {
@@ -74,7 +86,10 @@ export default {
         [SwipeItem.name]: SwipeItem,
         [Lazyload.name]: Lazyload,
         [Row.name]: Row,
-        [Col.name]: Col
+        [Col.name]: Col,
+        [Panel.name]: Panel,
+        [Tabbar.name]: Tabbar,
+        [TabbarItem.name]: TabbarItem
     },
     data() {
         return {
@@ -83,7 +98,8 @@ export default {
                 '../../static/images/banner1.jpg',
                 '../../static/images/banner2.jpg',
                 '../../static/images/banner3.jpg'
-            ]
+            ],
+            active: 0,
         }
     },
     created() {
@@ -115,7 +131,7 @@ export default {
 <style lang="less" scoped>
 .wrapper-box {
   background-color: #f3f3f4;
-  height: 100%;
+  height: auto;
   .header {
     background-color: rgb(167, 135, 67);
     color: #fff;
@@ -145,6 +161,19 @@ export default {
         height: 30px;
         line-height: 30px;
       }
+    }
+  }
+  .notice {
+    margin: 0 25px 25px;
+    padding-bottom: 50PX;
+    .notice_content {
+      padding: 10PX 15PX;
+    }
+  }
+  .van-tabbar {
+    background-color: rgb(167, 135, 67);
+    .van-tabbar-item {
+      color: #fff;
     }
   }
 }
