@@ -37,7 +37,7 @@ export default {
     methods: {
         submit() {
             var vm = this;
-            axios.post('http://dan.tushop.shop:88/api/login/login', {
+            this.$http.post('/remote/api/login/login', {
                 username: vm.username,
                 password: vm.password
             }).then((response) => {
