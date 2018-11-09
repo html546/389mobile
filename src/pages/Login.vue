@@ -10,15 +10,15 @@
         </div>
         <h2 class="title">会员登录</h2>
         <van-cell-group class="van-input-group">
-            <van-field class="van-input" v-model="username" clearable placeholder="会员编号" error />
-            <van-field class="van-input" v-model="password" clearable type="password" placeholder="登录密码" error />
+            <van-field class="van-input" v-model="username" clearable placeholder="会员编号" :error="nametest" />
+            <van-field class="van-input" v-model="password" clearable type="password" placeholder="登录密码" :error="passtest" />
         </van-cell-group>
         <van-button size="large" @click="submit">登录</van-button>
     </div>
 </template>
 
 <script>
-import { Field, CellGroup, Button } from 'vant';
+import { Field, CellGroup, Button, Toast } from 'vant';
 import axios from 'axios';
 // import api from '@/api';
 export default {
@@ -26,22 +26,36 @@ export default {
     components: {
         [Field.name]: Field,
         [CellGroup.name]: CellGroup,
-        [Button.name]: Button
+        [Button.name]: Button,
+        [Toast.name]: Toast
     },
     data() {
         return {
             username: '',
-            password: ''
+            password: '',
+            nametest:false,
+            passtest:false
         }
     },
     methods: {
         submit() {
             var vm = this;
+            if(!this.username){
+                this.nametest = true;
+            }
+            if(!this.password){
+                this.passtest = true;
+            }
             this.$http.post('/remote/api/login/login', {
                 username: vm.username,
                 password: vm.password
             }).then((response) => {
                 console.log(response);
+                if (response.data.status == 1) {
+                    Toast.success(response.data.msg);
+                } else if (response.data.status == 0) {
+                    Toast.fail(response.data.msg);
+                }
             }).catch((error) => {
                 console.log(error);
             })
