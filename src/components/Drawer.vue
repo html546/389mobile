@@ -1,6 +1,6 @@
 <template>
     <DwbVueDrawer 
-        :visible.sync="visible" 
+        :visible.sync="move" 
         :position="position" 
         :lockScroll="lockScroll" 
         :zIndex="zIndex" 
@@ -34,9 +34,9 @@ export default {
     components: {
         DwbVueDrawer
     },
+    props:['move'],
     data() {
         return {
-            active: 0,
             visible: false,
             position: 'left',
             lockScroll: true,
@@ -52,10 +52,6 @@ export default {
         }
     },
     methods: {
-        show(position) {
-            this.position = position
-            this.visible = true
-        },
         open() {
             console.log('open callback')
         },

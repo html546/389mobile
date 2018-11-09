@@ -71,7 +71,7 @@
             <van-tabbar-item icon="contact">团队管理</van-tabbar-item>
             <van-tabbar-item icon="contact">我的</van-tabbar-item>
         </van-tabbar>
-        <Drawer/>
+        <Drawer :move="move" :close="close" />
     </div>
 </template>
 
@@ -101,7 +101,9 @@ export default {
                 '../../static/images/banner1.jpg',
                 '../../static/images/banner2.jpg',
                 '../../static/images/banner3.jpg'
-            ]
+            ],
+            move: false,
+            active: 0
         }
     },
     created() {
@@ -121,12 +123,15 @@ export default {
     },
     methods: {
         onClickLeft() {
-            alert('左边滑出');
+            // alert('左边滑出');
+            this.move = true;
         },
         onClickRight() {
             alert('右边退出');
         },
-       
+        close(){
+            this.move = false;
+        }
     }
 }
 </script>
@@ -179,6 +184,5 @@ export default {
       color: #fff;
     }
   }
-  
 }
 </style>
