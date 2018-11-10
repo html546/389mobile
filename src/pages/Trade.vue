@@ -96,6 +96,7 @@ import Navbar from '@/components/Navbar'
 import Tabbar from '@/components/Tabbar'
 import Drawer from '@/components/Drawer'
 import { Icon, Row, Col } from 'vant'
+import '@/assets/less/Table.css'
 export default {
     name: '',
     components: {
@@ -154,31 +155,6 @@ export default {
       }
       &:last-child {
         border-right: 1px solid #e7e7e7;
-      }
-    }
-  }
-  .index-list {
-    width: 94%;
-    display: flex;
-    flex-wrap: wrap;
-    background: #fff;
-    margin: 20px auto;
-    .van-col {
-      border: 1px solid #e7e7e7;
-      padding: 20px 0;
-      p {
-        text-align: center;
-        margin-bottom: 10px;
-        .v-icon {
-          font-size: 30px;
-          color: #004ea1;
-        }
-      }
-      span {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
       }
     }
   }

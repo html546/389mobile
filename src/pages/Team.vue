@@ -35,13 +35,29 @@
                 </router-link>
             </van-col>
         </div>
-        <div class="index-list">
+        <div class="index-list index-list1">
             <van-col span="8">
                 <router-link to="">
                     <p>
-                        <v-icon name="zhucehuiyuan"></v-icon>
+                        <img src="@/assets/images/C_1.png" alt="">
                     </p>
-                    <span>注册会员</span>
+                    <span>白银</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <img src="@/assets/images/C_2.png" alt="">
+                    </p>
+                    <span>黄金</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <img src="@/assets/images/C_3.png" alt="">
+                    </p>
+                    <span>白金</span>
                 </router-link>
             </van-col>
         </div>
@@ -56,6 +72,7 @@ import Navbar from '@/components/Navbar'
 import Tabbar from '@/components/Tabbar'
 import Drawer from '@/components/Drawer'
 import { Icon, Row, Col } from 'vant'
+import '@/assets/less/Table.css'
 export default {
     name: '',
     components: {
@@ -82,65 +99,4 @@ export default {
 </script>
 
 <style lang="less">
-.wrapper-box {
-  background-color: #f3f3f4;
-  height: 100%;
-  .chunk-box {
-    margin: 20px 40px;
-    border-radius: 20px;
-    background: url(../assets/images/list_bg_1.jpg) no-repeat center center;
-    background-size: 100% auto;
-    overflow: hidden;
-    padding: 20px;
-    box-sizing: border-box;
-    .chunk-box-list {
-      padding: 50px 30px;
-      width: 33.33%;
-      box-sizing: border-box;
-      float: left;
-      text-align: center;
-      color: #fff;
-      border: 1px solid #e7e7e7;
-      border-right: none;
-      h4 {
-        font-weight: 900;
-        font-size: 36px;
-        font-family: Arial;
-      }
-      span {
-        font-size: 12px;
-        color: #f5f5f5;
-        font-family: monospace;
-      }
-      &:last-child {
-        border-right: 1px solid #e7e7e7;
-      }
-    }
-  }
-  .index-list {
-    width: 94%;
-    display: flex;
-    flex-wrap: wrap;
-    background: #fff;
-    margin: 20px auto;
-    .van-col {
-      border: 1px solid #e7e7e7;
-      padding: 20px 0;
-      p {
-        text-align: center;
-        margin-bottom: 10px;
-        .v-icon {
-          font-size: 30px;
-          color: #004ea1;
-        }
-      }
-      span {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
-      }
-    }
-  }
-}
 </style>
