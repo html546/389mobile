@@ -6,12 +6,13 @@
 </template>
 
 <script>
-import { NavBar, Icon } from 'vant'
+import { NavBar, Icon, Toast } from 'vant'
 export default {
     name: '',
     components: {
         [Icon.name]: Icon,
-        [NavBar.name]: NavBar
+        [NavBar.name]: NavBar,
+        [Toast.name]: Toast
     },
     data() {
         return {
@@ -29,7 +30,17 @@ export default {
             // this.$refs.child.$emit('open')
         },
         onClickRight() {
-            alert('右边退出');
+            var userid = JSON.parse(localStorage.getItem('user')).id;
+            console.log(userid);
+            this.$http.post('/remote/api/login/logout', {
+                userid: userid
+            }).then((response) => {
+                console.log(response);
+                Toast.success(response.data.msg);
+                this.$router.push({path:'/'});
+            }).catch((error) => {
+                console.log(error);
+            })
         }
     }
 }
