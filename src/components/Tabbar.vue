@@ -20,6 +20,16 @@ export default {
         return {
             active: 0
         }
+    },
+    watch: {
+        active(val, oldVal) {
+            console.log(val);
+            if(val === 0){
+                this.$router.push({path:'/index'})
+            }else if(val === 1){
+                this.$router.push({path:'/trade'})
+            }
+        }
     }
 }
 </script>

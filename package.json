@@ -16,6 +16,7 @@
     "less-loader": "^4.1.0",
     "vant": "^1.4.2",
     "vue": "^2.5.2",
+    "vue-iconfont": "^2.5.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

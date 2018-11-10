@@ -5,12 +5,22 @@ import App from './App'
 import router from './router'
 import axios from 'axios';
 import { Lazyload } from 'vant';
+import VueIconfont from 'vue-iconfont';
+
+import './assets/iconfont/iconfont.css';
+import './assets/iconfont/iconfont.js';
 
 Vue.config.productionTip = false
 
 Vue.prototype.$http = axios;
 
 Vue.use(Lazyload);
+
+Vue.use(VueIconfont, [{
+  tag: 'v-icon',
+  prefix: 'v-icon',
+  type: 'font'
+}])
 
 /* eslint-disable no-new */
 new Vue({
