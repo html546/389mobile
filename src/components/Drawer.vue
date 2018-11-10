@@ -4,27 +4,55 @@
             <img src="@/assets/images/logo.png" alt="">
         </div>
         <ul class="list">
-            <li>5</li>
-            <li>首页</li>
-            <li>会员资料</li>
-            <li>账户管理</li>
-            <li>组织图</li>
-            <li>奖金管理</li>
-            <li>财务管理</li>
-            <li>交易市场</li>
-            <li>SEK管理</li>
-            <li>公司留言</li>
-            <li>公告栏</li>
+            <van-cell-group>
+                <van-cell :title="username">
+                    <van-icon slot="right-icon" name="like" class="van-cell__right-icon"></van-icon>
+                </van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="首页" is-link icon="wap-home"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="会员资料" is-link icon="contact"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="账户管理" is-link icon="records"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="组织图" is-link icon="photo"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="奖金管理" is-link icon="after-sale"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="财务管理" is-link icon="discount"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="交易市场" is-link icon="logistics"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="SEK管理" is-link icon="edit-data"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="公司留言" is-link icon="phone"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="公告栏" is-link icon="phone"></van-cell>
+            </van-cell-group>
         </ul>
     </DwbVueDrawer>
 </template>
 
 <script>
 import { DwbVueDrawer } from 'dwb-vue-drawer';
+import { Cell, CellGroup,Icon } from 'vant';
 export default {
     name: '',
     components: {
-        DwbVueDrawer
+        DwbVueDrawer,
+        [Cell.name]: Cell,
+        [CellGroup.name]: CellGroup,
+        [Icon.name]:Icon
     },
     data() {
         return {
@@ -38,9 +66,15 @@ export default {
             },
             containerStyle: {
                 backgroundColor: '#303d4e',
-                width: '50vw'
-            }
+                width: '50vw',
+                // overflowY:'scroll'
+            },
+            username:'123'
         }
+    },
+    created() {
+        var vm = this;
+        vm.username = JSON.parse(localStorage.getItem('user')).username;
     },
     mounted() {
         this.$nextTick(function () {
@@ -72,7 +106,17 @@ export default {
     border: 15px solid #a88744;
   }
 }
-.list li {
-  height: 80px;
+.list{
+    height: 100%;
+    li{
+        height: 80px;
+    }
+}
+.van-cell-group {
+  background: #303d4e;
+  .van-cell {
+    background: #303d4e;
+    color: #fff;
+  }
 }
 </style>

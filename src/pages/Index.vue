@@ -1,9 +1,6 @@
 <template>
     <div class="wrapper-box">
-        <van-nav-bar :title="username" @click-left="onClickLeft" @click-right="onClickRight" class="header">
-            <van-icon name="wap-nav" slot="left"></van-icon>
-            <van-icon name="more-o" slot="right"></van-icon>
-        </van-nav-bar>
+        <Navbar @moveLeft="moveleft" />
         <div class="banner">
             <van-swipe :autoplay="3000">
                 <van-swipe-item v-for="(image,index) in images" :key="index">
@@ -71,14 +68,13 @@
 
 <script>
 // 这里使用了lazyload懒加载，可以后期加上加载中图片等一些配置信息
-import { NavBar, Icon, Swipe, SwipeItem, Lazyload, Row, Col, Panel } from 'vant'
+import { Swipe, SwipeItem, Lazyload, Row, Col, Panel } from 'vant'
+import Navbar from '@/components/Navbar'
 import Tabbar from '@/components/Tabbar'
 import Drawer from '@/components/Drawer'
 export default {
     name: '',
     components: {
-        [NavBar.name]: NavBar,
-        [Icon.name]: Icon,
         [Swipe.name]: Swipe,
         [SwipeItem.name]: SwipeItem,
         [Lazyload.name]: Lazyload,
@@ -86,16 +82,12 @@ export default {
         [Col.name]: Col,
         [Panel.name]: Panel,
         Drawer,
-        Tabbar
+        Tabbar,
+        Navbar
     },
     data() {
         return {
-            username: '',
-            images: [
-                '../../static/images/banner1.jpg',
-                '../../static/images/banner2.jpg',
-                '../../static/images/banner3.jpg'
-            ],
+            images: [],
         }
     },
     created() {
@@ -123,12 +115,8 @@ export default {
         })
     },
     methods: {
-        onClickLeft() {
-            // alert('左边滑出');
+        moveleft(){
             this.$refs.child.$emit('open')
-        },
-        onClickRight() {
-            alert('右边退出');
         }
     }
 }
@@ -138,13 +126,6 @@ export default {
 .wrapper-box {
   background-color: #f3f3f4;
   height: auto;
-  .header {
-    background-color: rgb(167, 135, 67);
-    color: #fff;
-    .van-icon {
-      color: #fff;
-    }
-  }
   .banner {
     margin: 25px;
     img {
