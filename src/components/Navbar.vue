@@ -1,5 +1,5 @@
 <template>
-    <van-nav-bar :title="username" @click-left="onClickLeft" @click-right="onClickRight" class="header">
+    <van-nav-bar :title="username" @click-left="onClickLeft" @click-right="onClickRight" class="header" :fixed="true">
         <van-icon name="wap-nav" slot="left"></van-icon>
         <van-icon name="more-o" slot="right"></van-icon>
     </van-nav-bar>

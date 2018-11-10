@@ -5,6 +5,7 @@ import Index from '@/pages/Index'
 import Trade from '@/pages/Trade'
 import Team from '@/pages/Team'
 import Mine from '@/pages/Mine'
+import MemberProfile from '@/pages/MemberProfile'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/mine',
       name: 'Mine',
       component: Mine
+    },
+    {
+      path: '/memberProfile',
+      name: 'MemberProfile',
+      component: MemberProfile
     }
   ]
 })
