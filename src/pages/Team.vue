@@ -1,0 +1,146 @@
+<template>
+    <div class="wrapper-box">
+        <Navbar @moveLeft="moveleft" />
+        <div class="index-list">
+            <van-col span="12">
+                <router-link to="">
+                    <p>
+                        <v-icon name="zhucehuiyuan"></v-icon>
+                    </p>
+                    <span>注册会员</span>
+                </router-link>
+            </van-col>
+            <van-col span="12">
+                <router-link to="">
+                    <p>
+                        <v-icon name="huiyuanguanli_huiyuanjihuo"></v-icon>
+                    </p>
+                    <span>激活会员</span>
+                </router-link>
+            </van-col>
+            <van-col span="12">
+                <router-link to="">
+                    <p>
+                        <v-icon name="zuzhi"></v-icon>
+                    </p>
+                    <span>团队组织图</span>
+                </router-link>
+            </van-col>
+            <van-col span="12">
+                <router-link to="">
+                    <p>
+                        <v-icon name="guanxi"></v-icon>
+                    </p>
+                    <span>团队关系图</span>
+                </router-link>
+            </van-col>
+        </div>
+        <div class="index-list">
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <v-icon name="zhucehuiyuan"></v-icon>
+                    </p>
+                    <span>注册会员</span>
+                </router-link>
+            </van-col>
+        </div>
+        <Tabbar></Tabbar>
+        <Drawer ref="child" />
+    </div>
+</template>
+
+<script>
+// 这里使用了lazyload懒加载，可以后期加上加载中图片等一些配置信息
+import Navbar from '@/components/Navbar'
+import Tabbar from '@/components/Tabbar'
+import Drawer from '@/components/Drawer'
+import { Icon, Row, Col } from 'vant'
+export default {
+    name: '',
+    components: {
+        Drawer,
+        Tabbar,
+        Navbar,
+        [Icon.name]: Icon,
+        [Row.name]: Row,
+        [Col.name]: Col
+    },
+    data() {
+        return {
+        }
+    },
+    created() {
+
+    },
+    methods: {
+        moveleft() {
+            this.$refs.child.$emit('open')
+        }
+    }
+}
+</script>
+
+<style lang="less">
+.wrapper-box {
+  background-color: #f3f3f4;
+  height: 100%;
+  .chunk-box {
+    margin: 20px 40px;
+    border-radius: 20px;
+    background: url(../assets/images/list_bg_1.jpg) no-repeat center center;
+    background-size: 100% auto;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    .chunk-box-list {
+      padding: 50px 30px;
+      width: 33.33%;
+      box-sizing: border-box;
+      float: left;
+      text-align: center;
+      color: #fff;
+      border: 1px solid #e7e7e7;
+      border-right: none;
+      h4 {
+        font-weight: 900;
+        font-size: 36px;
+        font-family: Arial;
+      }
+      span {
+        font-size: 12px;
+        color: #f5f5f5;
+        font-family: monospace;
+      }
+      &:last-child {
+        border-right: 1px solid #e7e7e7;
+      }
+    }
+  }
+  .index-list {
+    width: 94%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: 20px auto;
+    .van-col {
+      border: 1px solid #e7e7e7;
+      padding: 20px 0;
+      p {
+        text-align: center;
+        margin-bottom: 10px;
+        .v-icon {
+          font-size: 30px;
+          color: #004ea1;
+        }
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
+</style>

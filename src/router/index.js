@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/pages/Login'
 import Index from '@/pages/Index'
 import Trade from '@/pages/Trade'
+import Team from '@/pages/Team'
 
 Vue.use(Router)
 
@@ -14,14 +15,19 @@ export default new Router({
       component: Login
     },
     {
-      path:'/index',
-      name:'Index',
-      component:Index
+      path: '/index',
+      name: 'Index',
+      component: Index
     },
     {
-      path:'/trade',
-      name:'Trade',
-      component:Trade
+      path: '/trade',
+      name: 'Trade',
+      component: Trade
+    },
+    {
+      path: '/team',
+      name: 'Team',
+      component: Team
     }
   ]
 })

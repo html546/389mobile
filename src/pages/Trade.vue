@@ -15,7 +15,7 @@
                 <span>SEK账户价值</span>
             </div>
         </div>
-        <div class="index-list">
+        <!-- <div class="index-list">
             <div class="index-list-li">
                 <router-link to="">
                     <p>
@@ -37,7 +37,7 @@
                     <p>
                         <v-icon name="23234234234"></v-icon>
                     </p>
-                    <span>挂卖SEK</span>
+                    <span>SEK购买</span>
                 </router-link>
             </div>
             <div class="index-list-li">
@@ -48,6 +48,42 @@
                     <span>SEK买卖交易</span>
                 </router-link>
             </div>
+        </div> -->
+        <div class="index-list">
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <v-icon name="tubiaozhexiantu"></v-icon>
+                    </p>
+                    <span>挂卖SEK</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <v-icon name="jiaoyijilu"></v-icon>
+                    </p>
+                    <span>SEK交易记录</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <v-icon name="23234234234"></v-icon>
+                    </p>
+                    <span>SEK购买</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <van-icon name="wap-nav" size="25px" color="#004ea1"></van-icon>
+                    </p>
+                    <span>SEK买卖交易</span>
+                </router-link>
+            </van-col>
+            <van-col span="8"></van-col>
+            <van-col span="8"></van-col>
         </div>
         <Tabbar></Tabbar>
         <Drawer ref="child" />
@@ -59,18 +95,19 @@
 import Navbar from '@/components/Navbar'
 import Tabbar from '@/components/Tabbar'
 import Drawer from '@/components/Drawer'
-import { Icon } from 'vant'
+import { Icon, Row, Col } from 'vant'
 export default {
     name: '',
     components: {
         Drawer,
         Tabbar,
         Navbar,
-        [Icon.name]: Icon
+        [Icon.name]: Icon,
+        [Row.name]: Row,
+        [Col.name]: Col
     },
     data() {
         return {
-            images: [],
         }
     },
     created() {
@@ -84,7 +121,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .wrapper-box {
   background-color: #f3f3f4;
   height: 100%;
@@ -126,6 +163,31 @@ export default {
     flex-wrap: wrap;
     background: #fff;
     margin: 20px auto;
+    .van-col {
+      border: 1px solid #e7e7e7;
+      padding: 20px 0;
+      p {
+        text-align: center;
+        margin-bottom: 10px;
+        .v-icon {
+          font-size: 30px;
+          color: #004ea1;
+        }
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+  /* .index-list {
+    width: 94%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: 20px auto;
     .index-list-li {
       width: calc(~"(100% - 4px)/3");
       border: 1px solid #e7e7e7;
@@ -150,6 +212,6 @@ export default {
         border-right: 1px solid #e7e7e7;
       }
     }
-  }
+  } */
 }
 </style>

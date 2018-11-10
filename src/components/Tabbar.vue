@@ -3,7 +3,7 @@
         <van-tabbar-item icon="wap-home" to="/index" replace>首页</van-tabbar-item>
         <van-tabbar-item icon="logistics" to="/trade" replace>交易中心</van-tabbar-item>
         <van-tabbar-item icon="cart">商城购物</van-tabbar-item>
-        <van-tabbar-item icon="contact">团队管理</van-tabbar-item>
+        <van-tabbar-item icon="contact" to="/team">团队管理</van-tabbar-item>
         <van-tabbar-item icon="contact">我的</van-tabbar-item>
     </van-tabbar>
 </template>
