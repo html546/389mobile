@@ -10,6 +10,7 @@ import Account from '@/pages/Account'
 import Finance from '@/pages/Finance'
 import Message from '@/pages/Message'
 import Register from '@/pages/Register'
+import MessageList from '@/pages/MessageList'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/messageList',
+      name: 'MessageList',
+      component: MessageList
     }
   ]
 })
