@@ -3,43 +3,35 @@
         <Navbar @moveLeft="moveleft" />
         <div class="index-list">
             <van-col span="8">
-                <router-link to="/memberProfile">
-                    <p>
-                        <van-icon name="records" size="25px" color="#004ea1"></van-icon>
-                    </p>
-                    <span>基本信息</span>
-                </router-link>
-            </van-col>
-            <van-col span="8">
-                <router-link to="/account">
+                <router-link to="">
                     <p>
                         <van-icon name="setting" size="25px" color="#004ea1"></van-icon>
                     </p>
-                    <span>账户管理</span>
-                </router-link>
-            </van-col>
-            <van-col span="8">
-                <router-link to="/finance">
-                    <p>
-                        <van-icon name="after-sale" size="25px" color="#004ea1"></van-icon>
-                    </p>
-                    <span>财务管理</span>
+                    <span>密码修改</span>
                 </router-link>
             </van-col>
             <van-col span="8">
                 <router-link to="">
                     <p>
-                        <van-icon name="exchange" size="25px" color="#004ea1"></van-icon>
+                        <van-icon name="gold-coin" size="25px" color="#004ea1"></van-icon>
                     </p>
-                    <span>信息管理</span>
+                    <span>收款信息</span>
                 </router-link>
             </van-col>
             <van-col span="8">
                 <router-link to="">
                     <p>
-                        <van-icon name="pending-orders" size="25px" color="#004ea1"></van-icon>
+                        <van-icon name="upgrade" size="25px" color="#004ea1"></van-icon>
                     </p>
-                    <span>我的订单</span>
+                    <span>原点升级</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <van-icon name="aim" size="25px" color="#004ea1"></van-icon>
+                    </p>
+                    <span>账号复投</span>
                 </router-link>
             </van-col>
         </div>

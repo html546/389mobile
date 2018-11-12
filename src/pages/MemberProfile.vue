@@ -3,46 +3,8 @@
         <Navbar @moveLeft="moveleft" />
         <div class="memberProfile">
             <van-row>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
-                <van-col span="4">用户编号</van-col>
-                <van-col span="20">1</van-col>
+                <van-col span="4"></van-col>
+                <van-col span="20"></van-col>
             </van-row>
         </div>
         <Tabbar></Tabbar>
@@ -56,6 +18,7 @@ import Navbar from '@/components/Navbar'
 import Tabbar from '@/components/Tabbar'
 import Drawer from '@/components/Drawer'
 import { Row, Col } from 'vant';
+import '@/assets/less/Table.css'
 export default {
     name: '',
     components: {
@@ -78,6 +41,7 @@ export default {
             sessionid: sessionid
         }).then((response) => {
             console.log(response);
+            // this.message = response.data.data;
         }).catch((error) => {
             console.log(error);
         })
@@ -91,24 +55,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.wrapper-box {
-  background: #f3f3f4;
-  height: calc(~'100% - 96PX');
-  position: relative;
-  top: 46PX;
-  .memberProfile {
-    margin: 20px;
-    background: #fff;
-    padding: 0 40px;
-    box-sizing: border-box;
-    height: 100%;
-    overflow-y: scroll;
-    .van-row {
-      border-bottom: 1px solid #d0d0d0;
-      .van-col {
-        height: 40px;
-        line-height: 40px;
-      }
+.memberProfile {
+  margin: 20px;
+  background: #fff;
+  padding: 0 40px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: scroll;
+  .van-row {
+    border-bottom: 1px solid #d0d0d0;
+    .van-col {
+      height: 40px;
+      line-height: 40px;
     }
   }
 }

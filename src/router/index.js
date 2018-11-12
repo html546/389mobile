@@ -6,6 +6,8 @@ import Trade from '@/pages/Trade'
 import Team from '@/pages/Team'
 import Mine from '@/pages/Mine'
 import MemberProfile from '@/pages/MemberProfile'
+import Account from '@/pages/Account'
+import Finance from '@/pages/Finance'
 
 Vue.use(Router)
 
@@ -40,6 +42,16 @@ export default new Router({
       path: '/memberProfile',
       name: 'MemberProfile',
       component: MemberProfile
+    },
+    {
+      path: '/account',
+      name: 'Account',
+      component: Account
+    },
+    {
+      path: '/finance',
+      name: 'Finance',
+      component: Finance
     }
   ]
 })
