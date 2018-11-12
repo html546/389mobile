@@ -123,11 +123,9 @@ export default {
 </script>
 
 <style lang="less">
-.wrapper-box {
-  background-color: #f3f3f4;
-  height: 100%;
+
   .chunk-box {
-    margin: 60PX 40px 20px;
+    margin: 10PX 40px 20px;
     border-radius: 20px;
     background: url(../assets/images/list_bg_1.jpg) no-repeat center center;
     background-size: 100% auto;
@@ -189,5 +187,4 @@ export default {
       }
     }
   } */
-}
 </style>

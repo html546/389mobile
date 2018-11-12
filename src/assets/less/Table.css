@@ -1,34 +1,41 @@
-.index-list {
+.wrapper-box {
+  background-color: #f3f3f4;
+  height: calc(100% - 96PX);
+  overflow: hidden;
+  position: relative;
+  top: 46PX;
+}
+.wrapper-box .index-list {
   width: 94%;
   display: flex;
   flex-wrap: wrap;
   background: #fff;
   margin: 20px auto;
 }
-.index-list.index-list1 .van-col {
+.wrapper-box .index-list.index-list1 .van-col {
   padding: 10px 0;
   border: none;
 }
-.index-list.index-list1 .van-col p {
+.wrapper-box .index-list.index-list1 .van-col p {
   margin-bottom: 0;
 }
-.index-list .van-col {
+.wrapper-box .index-list .van-col {
   border: 1px solid #e7e7e7;
   padding: 20px 0;
 }
-.index-list .van-col p {
+.wrapper-box .index-list .van-col p {
   text-align: center;
   margin-bottom: 10px;
 }
-.index-list .van-col p .v-icon {
+.wrapper-box .index-list .van-col p .v-icon {
   font-size: 30px;
   color: #004ea1;
 }
-.index-list .van-col p img {
+.wrapper-box .index-list .van-col p img {
   width: 30Px;
   height: 30Px;
 }
-.index-list .van-col span {
+.wrapper-box .index-list .van-col span {
   display: inline-block;
   width: 100%;
   text-align: center;

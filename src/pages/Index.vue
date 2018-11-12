@@ -128,7 +128,6 @@ export default {
   height: auto;
   .banner {
     margin: 25px;
-    margin-top: 65PX;
     img {
       width: 100%;
       height: auto;

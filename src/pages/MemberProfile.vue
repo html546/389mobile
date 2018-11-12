@@ -93,13 +93,16 @@ export default {
 <style lang="less" scoped>
 .wrapper-box {
   background: #f3f3f4;
-  height: 100%;
+  height: calc(~'100% - 96PX');
+  position: relative;
+  top: 46PX;
   .memberProfile {
     margin: 20px;
-    margin-top: 60PX;
     background: #fff;
     padding: 0 40px;
     box-sizing: border-box;
+    height: 100%;
+    overflow-y: scroll;
     .van-row {
       border-bottom: 1px solid #d0d0d0;
       .van-col {
