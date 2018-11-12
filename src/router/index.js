@@ -9,6 +9,7 @@ import MemberProfile from '@/pages/MemberProfile'
 import Account from '@/pages/Account'
 import Finance from '@/pages/Finance'
 import Message from '@/pages/Message'
+import Register from '@/pages/Register'
 
 Vue.use(Router)
 
@@ -55,9 +56,14 @@ export default new Router({
       component: Finance
     },
     {
-      path:'/message',
-      name:'Message',
-      component:Message
+      path: '/message',
+      name: 'Message',
+      component: Message
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     }
   ]
 })

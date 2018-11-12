@@ -3,7 +3,7 @@
         <Navbar @moveLeft="moveleft" />
         <div class="index-list">
             <van-col span="12">
-                <router-link to="">
+                <router-link to="/register">
                     <p>
                         <v-icon name="zhucehuiyuan"></v-icon>
                     </p>
