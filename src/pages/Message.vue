@@ -3,43 +3,27 @@
         <Navbar @moveLeft="moveleft" />
         <div class="index-list">
             <van-col span="8">
-                <router-link to="/memberProfile">
+                <router-link to="">
                     <p>
-                        <van-icon name="records" size="25px" color="#004ea1"></van-icon>
+                        <v-icon name="gonggao"></v-icon>
                     </p>
-                    <span>基本信息</span>
-                </router-link>
-            </van-col>
-            <van-col span="8">
-                <router-link to="/account">
-                    <p>
-                        <van-icon name="setting" size="25px" color="#004ea1"></van-icon>
-                    </p>
-                    <span>账户管理</span>
-                </router-link>
-            </van-col>
-            <van-col span="8">
-                <router-link to="/finance">
-                    <p>
-                        <van-icon name="after-sale" size="25px" color="#004ea1"></van-icon>
-                    </p>
-                    <span>财务管理</span>
-                </router-link>
-            </van-col>
-            <van-col span="8">
-                <router-link to="/message">
-                    <p>
-                        <van-icon name="exchange" size="25px" color="#004ea1"></van-icon>
-                    </p>
-                    <span>信息管理</span>
+                    <span>公告</span>
                 </router-link>
             </van-col>
             <van-col span="8">
                 <router-link to="">
                     <p>
-                        <van-icon name="pending-orders" size="25px" color="#004ea1"></van-icon>
+                        <van-icon name="pending-evaluate" size="30px" color="#004ea1"></van-icon>
                     </p>
-                    <span>我的订单</span>
+                    <span>咨询留言</span>
+                </router-link>
+            </van-col>
+            <van-col span="8">
+                <router-link to="">
+                    <p>
+                        <van-icon name="records" size="30px" color="#004ea1"></van-icon>
+                    </p>
+                    <span>咨询记录</span>
                 </router-link>
             </van-col>
         </div>

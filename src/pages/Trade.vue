@@ -128,7 +128,7 @@ export default {
     margin: 10PX 40px 20px;
     border-radius: 20px;
     background: url(../assets/images/list_bg_1.jpg) no-repeat center center;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     overflow: hidden;
     padding: 20px;
     box-sizing: border-box;

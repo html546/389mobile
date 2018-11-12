@@ -8,6 +8,7 @@ import Mine from '@/pages/Mine'
 import MemberProfile from '@/pages/MemberProfile'
 import Account from '@/pages/Account'
 import Finance from '@/pages/Finance'
+import Message from '@/pages/Message'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/finance',
       name: 'Finance',
       component: Finance
+    },
+    {
+      path:'/message',
+      name:'Message',
+      component:Message
     }
   ]
 })
